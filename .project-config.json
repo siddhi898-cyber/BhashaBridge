@@ -1,0 +1,34 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "https://7f0548f6b28a1758d9bf7be630d36cb4.artifacts.cloudflare.net/git/prod/9jgSKA9YGzXFw2iHZM7Zz6.git",
+    "expiration": "2026-09-25T17:23:44.826Z",
+    "token": "art_v2_x_cb789f86065924bd5d2c5df14bc79a3e794dea12?expires=1790357024",
+    "backend": "GIT_BACKEND_ARTIFACTS"
+  },
+  "name": "bhasha-bridge-quiz",
+  "path": "/home/ubuntu/bhasha-bridge-quiz",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "VVB4PU3xQ8F7PX8fSNu9vr",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "PUCaUHFKcF6QHDapE9yCir",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "siddhi sethia",
+    "OWNER_OPEN_ID": "YGeYWCuVtddapUNkrB29FD",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "bf424db1-6b10-4ec8-8a0f-67ebc4c22e82",
+    "VITE_APP_ID": "9jgSKA9YGzXFw2iHZM7Zz6",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "Bhasha Bridge — Multilingual Learning Quizzes",
+    "VITE_FRONTEND_FORGE_API_KEY": "QJvHGJo3EwbnRxneXnvMR4",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
