@@ -18,6 +18,21 @@ function odiaToDevanagari(text: string): string {
     .join("");
 }
 
+function santaliToDevanagari(text: string): string {
+  const map: Record<string, string> = {
+    "ᱚ": "ओ", "ᱛ": "त", "ᱜ": "ग", "ᱝ": "ङ", "ᱞ": "ल",
+    "ᱟ": "आ", "ᱠ": "क", "ᱡ": "ज", "ᱢ": "म", "ᱣ": "व",
+    "ᱤ": "इ", "ᱥ": "स", "ᱦ": "ह", "ᱧ": "ञ", "ᱨ": "र",
+    "ᱩ": "उ", "ᱪ": "च", "ᱫ": "द", "ᱬ": "ण", "ᱭ": "य",
+    "ᱮ": "ए", "ᱯ": "प", "ᱰ": "ड", "ᱱ": "न", "ᱲ": "ड़",
+    "ᱳ": "ओ", "ᱴ": "ट", "ᱵ": "ब", "ᱶ": "भ", "ᱷ": "ख",
+    "ᱸ": "ं", "ᱹ": "़", "ᱺ": "ं", "ᱻ": "ः", "ᱼ": "",
+    "᱐": "०", "᱑": "१", "᱒": "२", "᱓": "३", "᱔": "४",
+    "᱕": "५", "᱖": "६", "᱗": "७", "᱘": "८", "᱙": "९"
+  };
+  return Array.from(text).map(c => map[c] || c).join("");
+}
+
 function cleanSpeechText(text: string): string {
   return text
     .replace(/[*_#`~[\]()]/g, " ")
@@ -60,6 +75,7 @@ function ttsProxyPlugin() {
             targetTl = hasArabic ? "ur" : "hi";
           } else if (rawTl === "sat") {
             targetTl = "hi";
+            cleanQ = santaliToDevanagari(cleanQ);
           }
 
           const cacheKey = `${targetTl}:::${cleanQ}`;
@@ -339,6 +355,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    allowedHosts: true,
     fs: {
       strict: false,
     },
