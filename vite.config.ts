@@ -111,7 +111,9 @@ function ttsProxyPlugin() {
               gRes.on("data", (chunk: Buffer) => chunks.push(chunk));
               gRes.on("end", () => {
                 const completeBuf = Buffer.concat(chunks);
-                audioCache.set(cacheKey, completeBuf);
+                if (completeBuf.length > 500) {
+                  audioCache.set(cacheKey, completeBuf);
+                }
                 res.writeHead(200, {
                   "Content-Type": "audio/mpeg",
                   "Content-Length": completeBuf.length,
